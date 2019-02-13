@@ -66,10 +66,24 @@ public class Test1 {
 	  
   }
   
+  @Test
+	public void test1() throws Exception {
+		//this is the first test
+		WebDriverWait wait = new WebDriverWait(driver,1000);
+		//Thread.sleep(1000);
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.partialLinkText("Bookings"))).click();
+		//By.xpath("//*[@id='body-section']/div/div[3]/div/div[1]/ul/li[1]/a")).click();
+		//driver.findElement(By.xpath("//*[@id='body-section']/div/div[3]/div/div[1]/ul/li[1]/a")).click();
+		System.out.println("clicked on booking");
+		
+}
   
   @AfterTest
   public void afterTest() throws Exception {
 	  WebDriverWait wait = new WebDriverWait(driver,1000);
+	        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/nav/div/div[2]/ul[2]/ul/li[1]/a/b"))).click();
+		System.out.println("clicked");
+		wait.until(ExpectedConditions.visibilityOfElementLocated(By.partialLinkText("Logout"))).click();
 		driver.findElement(By.linkText("Logout")).click();
 		System.out.println("logout");
 		Thread.sleep(1000);
