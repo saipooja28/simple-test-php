@@ -39,7 +39,7 @@ public class Test1 {
 		dcp.setCapability(CapabilityType.SUPPORTS_NETWORK_CONNECTION, true);
 		dcp.setCapability("name", "PHP");		
 		dcp.setCapability("idleTimeout", 150);
-		driver = new RemoteWebDriver(new URL("http://35.202.17.149:4444/wd/hub"),dcp);
+		driver = new RemoteWebDriver(new URL("http://34.73.32.22:4444/wd/hub"),dcp);
 		/*System.setProperty("webdriver.chrome.driver","D:\\chromedriver.exe");
 		driver = new ChromeDriver(); 
 		driver.manage().window().maximize();*///http://35.190.187.1:4444/wd/hubhttp://104.155.135.94:4444/wd/hub
