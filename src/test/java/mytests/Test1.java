@@ -83,8 +83,11 @@ public class Test1 {
 	  WebDriverWait wait = new WebDriverWait(driver,1000);
 	        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("/html/body/nav/div/div[2]/ul[2]/ul/li[1]/a/b"))).click();
 		System.out.println("clicked");
-		wait.until(ExpectedConditions.visibilityOfElementLocated(By.partialLinkText("Logout"))).click();
-		driver.findElement(By.linkText("Logout")).click();
+	  WebElement element = driver.findElement(By.linkText("JOHNY"));
+	  Actions action = new Actions(driver);
+	  action.moveToElement(element).moveToElement(driver.findElement(By.linkText("Logout"))).click().build().perform();
+// 		wait.until(ExpectedConditions.visibilityOfElementLocated(By.partialLinkText("Logout"))).click();
+// 		driver.findElement(By.linkText("Logout")).click();
 		System.out.println("logout");
 		Thread.sleep(1000);
 		String s= wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//*[@id='loginfrm']/div[1]/div[1]"))).getText();
